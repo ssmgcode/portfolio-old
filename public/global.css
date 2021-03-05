@@ -11,13 +11,16 @@
 }
 
 :root {
+  /* Sizes */
+  --navbar-height: 70px;
+
   --body-color: #f6f8fa;
   --surface-color: #ffffff;
   --border-color: #e1e4e8;
 
   --text-color: #000;
 
-  --border-radius: 0.5rem;
+  --border-radius: 12px;
 
   /* Colors */
   --monochromatic-color: 0, 0, 0;
@@ -36,6 +39,7 @@
   /* Shadows */
   --shadow-outside-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
     0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-outside-2: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 body.dark {
@@ -97,13 +101,16 @@ button,
 .button {
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   color: var(--text-color);
   padding: 8px 16px;
   font-weight: 500;
   transform: scale(1);
-  margin: 0.2em;
   background: rgba(var(--monochromatic-color), 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 :is(button, .button):hover {
@@ -156,5 +163,19 @@ button,
 
 :is(button, .button):disabled:active {
   transform: none;
+}
+/* -> */
+
+/* <- input */
+input {
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 5px;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0.2em rgba(var(--monochromatic-color), 0.2);
+  outline: none;
 }
 /* -> */
