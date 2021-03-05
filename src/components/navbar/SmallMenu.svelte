@@ -22,12 +22,12 @@
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, 0.2);
+    background: rgba(244, 244, 244, 0.8);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 2;
   }
 
   .small-menu {
@@ -48,7 +48,7 @@
     padding-bottom: 2rem;
     background: var(--surface-color);
     text-align: center;
-    box-shadow: var(--shadow-outside-2);
+    box-shadow: var(--shadow-outside-3);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
 

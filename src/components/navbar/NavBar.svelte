@@ -11,7 +11,7 @@
 </script>
 
 <nav>
-  <h1 class="title">SSMG's portfolio</h1>
+  <h1 class="title">SSMG</h1>
   <BigMenu />
   <button class="burger" on:click={toggleShowSmallMenu}>
     <box-icon name="menu" size="2em" class="burger" />
@@ -29,7 +29,6 @@
     background: var(--surface-color);
     box-shadow: var(--shadow-outside-2);
     padding: 1rem;
-    z-index: 1;
 
     display: flex;
     align-items: center;
