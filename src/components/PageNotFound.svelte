@@ -66,7 +66,7 @@
 <style>
   .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
@@ -101,7 +101,6 @@
 
   button {
     grid-area: action;
-    width: 70%;
-    max-width: 500px;
+    width: 100%;
   }
 </style>
