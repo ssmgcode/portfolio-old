@@ -15,7 +15,7 @@
     <div class="middle-section">
       <main>
         <Route path="/">
-          <Landing />
+          <LandingPage />
         </Route>
       </main>
       <Footer />
