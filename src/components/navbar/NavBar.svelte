@@ -3,7 +3,7 @@
   import BigMenu from './BigMenu.svelte'
   import SmallMenu from './SmallMenu.svelte'
 
-  let showSmallMenu: boolean = true
+  let showSmallMenu: boolean = false
   const toggleShowSmallMenu = () => (showSmallMenu = !showSmallMenu)
   window.onclick = (e) => {
     if (!e.target.matches('.burger')) showSmallMenu = false

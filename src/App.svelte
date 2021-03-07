@@ -6,6 +6,7 @@
   import { Router, Route } from 'svelte-navigator'
   import NavBar from './components/navbar/NavBar.svelte'
   import Footer from './components/Footer.svelte'
+  import PageNotFound from './components/PageNotFound.svelte'
   import 'boxicons'
 </script>
 
@@ -17,6 +18,7 @@
         <Route path="/">
           <LandingPage />
         </Route>
+        <PageNotFound />
       </main>
       <Footer />
     </div>
