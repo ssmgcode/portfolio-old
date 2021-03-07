@@ -13,14 +13,12 @@
 :root {
   /* Sizes */
   --navbar-height: 70px;
-  --button-border-radius: 4px;
+  --widget-border-radius: 4px;
   --dialog-border-radius: 6px;
 
-  /* Elementary colors */
-  --body-background: #fafafa;
-  --surface-background: #f5f5f5;
-  /* --surface-background: #fafafa; */
-  --button-background: #fafafa;
+  --body-background: #f0f2f5;
+  --surface-background: #ffffff;
+  --button-background: #ffffff;
   --button-pressed-background: #eeeeee;
 
   --text-color: #333333;
@@ -42,6 +40,13 @@
   --primary-color-rgb: 0, 72, 144;
   --primary-color-rgb: 4, 102, 200;
 
+  --warning-color: #f9ae3f;
+  --warning-color-rgb: 249, 174, 63;
+  --error-color: #de5050;
+  --error-color-rgb: 222, 80, 80;
+  --success-color: #37bc64;
+  --success-color-rgb: 55, 188, 100;
+
   /* Shadows */
   /* <- Widget */
   --shadow-outside-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
@@ -53,24 +58,18 @@
   --widget-default-outset-shadow-1: 0px 1px 1px rgba(0, 0, 0, 0.2);
   --widget-default-inset-shadow-1: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
   --widget-focus-outset-shadow-1: var(--widget-default-outset-shadow-1),
-    0 0 0 0.2em rgba(255, 255, 255, 0.2),
+    0 0 0 0.2em rgba(255, 255, 255, 0),
     0 0 0 0.2em rgba(var(--primary-color-rgb), 0.3);
   --widget-focus-inset-shadow-1: var(--widget-default-outset-shadow-1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.2),
     inset 0 0 0 1px rgba(var(--primary-color-rgb), 0.7);
   /* -> */
-
-  /* <- Dialog */
-  --dialog-default-outset-shadow-1: 0px 2px 7px rgba(0, 0, 0, 0.3),
-    1px 2px 7px rgba(0, 0, 0, 0.1), -1px 2px 7px rgba(0, 0, 0, 0.1);
-  --dialog-default-inset-shadow-1: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  /* -> */
   /* -> */
 }
 
 body.dark {
-  --body-background: #333333;
-  --surface-background: #2e2e2e;
+  --body-background: #242526;
+  --surface-background: #363636;
   --button-background: #454545;
   --button-pressed-background: #2b2b2b;
 
@@ -84,15 +83,9 @@ body.dark {
   --widget-default-inset-shadow-1: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   --widget-focus-outset-shadow-1: var(--widget-default-outset-shadow-1),
     0 0 0 0.2em rgba(255, 255, 255, 0.2),
-    0 0 0 0.2em rgba(var(--primary-color-rgb), 0.3);
+    0 0 0 0.2em rgba(var(--primary-color-rgb), 0.5);
   --widget-focus-inset-shadow-1: var(--widget-default-outset-shadow-1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
     inset 0 0 0 1px rgba(var(--primary-color-rgb), 0.7);
-  /* -> */
-
-  /* <- Dialog */
-  --dialog-default-outset-shadow-1: 0px 1px 1px rgba(0, 0, 0, 0.5);
-  --dialog-default-inset-shadow-1: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   /* -> */
   /* -> */
 }
@@ -149,7 +142,7 @@ button,
 .button {
   outline: none;
   border: none;
-  border-radius: var(--button-border-radius);
+  border-radius: var(--widget-border-radius);
   color: var(--text-color);
   padding: 8px 16px;
   font-weight: 500;
@@ -198,24 +191,50 @@ button,
 /* -> */
 
 /* <- input */
-input {
-  border-radius: 5px;
+input,
+textarea {
+  border-radius: var(--widget-border-radius);
   outline: none;
-  border: 1px solid transparent;
-  padding: 5px;
+  background: var(--surface-background);
+  color: var(--text-color);
+  border: 1px solid rgba(var(--theme-inverse-color), 0.2);
+  padding: 7px;
+  box-shadow: var(--widget-default-outset-shadow-1);
 }
 
-input:focus {
-  box-shadow: 0 0 0 0.2em rgba(var(--theme-inverse-color), 0.2);
+:is(input, textarea):focus {
   outline: none;
+  box-shadow: var(--widget-focus-outset-shadow-1);
+  border-color: rgba(var(--primary-color-rgb), 0.7);
+}
+
+:is(input, textarea):required {
+  border-color: var(--error-color);
+}
+
+:is(input, textarea):required:focus {
+  box-shadow: var(--widget-default-outset-shadow-1),
+    0 0 0 0.2em rgba(255, 255, 255, 0),
+    0 0 0 0.2em rgba(var(--error-color-rgb), 0.3);
+}
+
+:is(input, textarea).success {
+  border-color: var(--success-color);
+}
+
+:is(input, textarea).success:focus {
+  box-shadow: var(--widget-default-outset-shadow-1),
+    0 0 0 0.2em rgba(255, 255, 255, 0),
+    0 0 0 0.2em rgba(var(--success-color-rgb), 0.3);
 }
 /* -> */
 
 /* <- Dialog */
-.dialog {
+.surface {
   background: var(--surface-background);
   border-radius: var(--dialog-border-radius);
-  box-shadow: var(--dialog-default-outset-shadow-1);
+  box-shadow: var(--widget-default-inset-shadow-1),
+    var(--widget-default-outset-shadow-1);
   padding: 0.8em;
 }
 /* -> */
