@@ -11,7 +11,9 @@
 </script>
 
 <nav>
-  <h1 class="title">SSMG</h1>
+  <h1 class="title" on:click={() => document.body.classList.toggle('dark')}>
+    SSMG
+  </h1>
   <BigMenu />
   <button class="burger" on:click={toggleShowSmallMenu}>
     <box-icon name="menu" size="2em" class="burger" />
@@ -26,8 +28,8 @@
     grid-area: navbar;
 
     height: var(--navbar-height);
-    background: var(--surface-color);
-    box-shadow: var(--shadow-outside-2);
+    background: var(--surface-background);
+    box-shadow: var(--widget-default-outset-shadow-1);
     padding: 1rem;
 
     display: flex;
