@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { link, Link } from 'svelte-navigator'
+  import { Link } from 'svelte-navigator'
   import { slide, fade } from 'svelte/transition'
   import formatRoutes from '../../utils/formatRoutes'
   export let navBarLinks: string[]
+  export let toggleShowSmallMenu: () => boolean
 
   const formattedRoutes = formatRoutes(navBarLinks)
 </script>
@@ -15,7 +16,9 @@
   >
     <h3 class="title">Menu</h3>
     {#each formattedRoutes as { link, name }}
-      <Link to={link} class="menu-item"><p>{name}</p></Link>
+      <Link on:click={toggleShowSmallMenu} to={link} class="menu-item">
+        <p>{name}</p>
+      </Link>
     {/each}
   </div>
 </div>
