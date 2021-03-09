@@ -18,8 +18,8 @@
 
   --body-background: #f0f2f5;
   --surface-background: #ffffff;
-  --button-background: #ffffff;
-  --button-pressed-background: #eeeeee;
+  --button-background: #e4e6eb;
+  --button-pressed-background: #dadada;
 
   --text-color: #333333;
 
@@ -69,9 +69,9 @@
 
 body.dark {
   --body-background: #242526;
-  --surface-background: #363636;
-  --button-background: #454545;
-  --button-pressed-background: #2b2b2b;
+  --surface-background: #333333;
+  --button-background: #48494b;
+  --button-pressed-background: #424040;
 
   --text-color: #fafafa;
   --theme-inverse-color: 255, 255, 255;
