@@ -1,12 +1,15 @@
 <script lang="ts">
   import { Link } from 'svelte-navigator'
+  import formatRoutes from '../../utils/formatRoutes'
+  export let navBarLinks: string[]
+
+  const formattedRoutes = formatRoutes(navBarLinks)
 </script>
 
 <div class="big-menu">
-  <Link to="/education" class="menu-item"><span>Education</span></Link>
-  <Link to="/experience" class="menu-item"><span>Experience</span></Link>
-  <Link to="/projects" class="menu-item"><span>Projects</span></Link>
-  <Link to="/contact-me" class="menu-item"><span>Contact me</span></Link>
+  {#each formattedRoutes as { link, name }}
+    <Link to={link} class="menu-item"><span>{name}</span></Link>
+  {/each}
 </div>
 
 <style>

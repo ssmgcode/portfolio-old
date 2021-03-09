@@ -8,13 +8,15 @@
   window.onclick = (e) => {
     if (!e.target.matches('.burger')) showSmallMenu = false
   }
+
+  const navBarLinks = ['education', 'experience', 'projects', 'contact me']
 </script>
 
 <nav>
   <h1 class="title" on:click={() => document.body.classList.toggle('dark')}>
     SSMG
   </h1>
-  <BigMenu />
+  <BigMenu {navBarLinks} />
   <button class="burger" on:click={toggleShowSmallMenu}>
     <box-icon name="menu" size="2em" class="burger" />
   </button>
