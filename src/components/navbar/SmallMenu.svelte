@@ -1,6 +1,10 @@
 <script lang="ts">
-  import { Link } from 'svelte-navigator'
+  import { link, Link } from 'svelte-navigator'
   import { slide, fade } from 'svelte/transition'
+  import formatRoutes from '../../utils/formatRoutes'
+  export let navBarLinks: string[]
+
+  const formattedRoutes = formatRoutes(navBarLinks)
 </script>
 
 <div class="container" transition:fade={{ duration: 200 }}>
@@ -10,10 +14,9 @@
     transition:slide={{ duration: 200 }}
   >
     <h3 class="title">Menu</h3>
-    <Link to="/education" class="menu-item"><p>Education</p></Link>
-    <Link to="/experience" class="menu-item"><p>Experience</p></Link>
-    <Link to="/projects" class="menu-item"><p>Projects</p></Link>
-    <Link to="/contact-me" class="menu-item"><p>Contact me</p></Link>
+    {#each formattedRoutes as { link, name }}
+      <Link to={link} class="menu-item"><p>{name}</p></Link>
+    {/each}
   </div>
 </div>
 

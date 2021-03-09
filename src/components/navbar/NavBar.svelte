@@ -22,7 +22,7 @@
   </button>
 </nav>
 {#if showSmallMenu}
-  <SmallMenu />
+  <SmallMenu {navBarLinks} />
 {/if}
 
 <style>
