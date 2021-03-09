@@ -18,7 +18,7 @@
   </h1>
   <BigMenu {navBarLinks} />
   <button class="burger" on:click={toggleShowSmallMenu}>
-    <box-icon name="menu" size="2em" class="burger" />
+    <box-icon name="menu" size="2em" class="burger" color="var(--text-color)" />
   </button>
 </nav>
 {#if showSmallMenu}
