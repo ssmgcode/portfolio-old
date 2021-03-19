@@ -35,4 +35,6 @@ const getStorageDarkTheme = (): boolean => {
   return isDarkThemeTurnedOn
 }
 
-export const isDarkModeTurnedOn = darkThemeStore()
+const isDarkModeTurnedOn = darkThemeStore()
+
+export default isDarkModeTurnedOn
