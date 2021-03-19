@@ -82,7 +82,6 @@ body.dark {
   --widget-default-outset-shadow-1: 0px 1px 1px rgba(0, 0, 0, 0.5);
   --widget-default-inset-shadow-1: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   --widget-focus-outset-shadow-1: var(--widget-default-outset-shadow-1),
-    0 0 0 0.2em rgba(255, 255, 255, 0.2),
     0 0 0 0.2em rgba(var(--primary-color-rgb), 0.5);
   --widget-focus-inset-shadow-1: var(--widget-default-outset-shadow-1),
     inset 0 0 0 1px rgba(var(--primary-color-rgb), 0.7);
