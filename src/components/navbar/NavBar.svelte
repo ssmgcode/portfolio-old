@@ -16,7 +16,7 @@
     }
   }
 
-  const navBarLinks = ['education', 'experience', 'projects', 'contact me']
+  const navBarLinks = ['experience', 'projects', 'contact me']
 </script>
 
 <nav>
