@@ -9,6 +9,16 @@
   import RouteNotFound from './components/RouteNotFound.svelte'
   import PageNotFound from './components/PageNotFound.svelte'
   import 'boxicons'
+  import ElementsTest from './components/ElementsTest.svelte'
+
+  // Scripts
+  import darkThemeStore from './stores/dark-theme'
+
+  $: if ($darkThemeStore) {
+    document.body.classList.add('dark')
+  } else {
+    document.body.classList.remove('dark')
+  }
 </script>
 
 <div id="app">
@@ -18,6 +28,9 @@
       <main>
         <Route path="/">
           <LandingPage />
+        </Route>
+        <Route path="elements-test">
+          <ElementsTest />
         </Route>
         <RouteNotFound>
           <PageNotFound />
