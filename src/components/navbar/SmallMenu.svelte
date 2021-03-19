@@ -51,12 +51,12 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
     gap: 10px;
 
     padding-bottom: 2rem;
     text-align: center;
-    box-shadow: var(--shadow-outside-2);
+    box-shadow: var(--shadow-outside-2), var(--widget-default-inset-shadow-1);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
